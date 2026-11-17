@@ -1,5 +1,8 @@
 {
   "name": "apple-notes-windows",
+  "productName": "Apple Notes",
+  "description": "Apple Notes for Windows 10",
+  "author": "Ganesh Koli",
   "private": true,
   "version": "1.0.0",
   "type": "module",
