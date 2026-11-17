@@ -6,10 +6,15 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 function createWindow() {
+  const isMac = process.platform === 'darwin';
   const win = new BrowserWindow({
     width: 1200,
     height: 800,
-    titleBarStyle: 'hiddenInset',
+    minWidth: 860,
+    minHeight: 550,
+    title: 'Apple Notes',
+    autoHideMenuBar: true,
+    ...(isMac ? { titleBarStyle: 'hiddenInset' } : {}),
     webPreferences: {
       nodeIntegration: true,
       contextIsolation: false
@@ -29,3 +34,4 @@ app.whenReady().then(createWindow);
 app.on('window-all-closed', () => {
   if (process.platform !== 'darwin') app.quit();
 });
+
